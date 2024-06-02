@@ -11,7 +11,7 @@ class TitleView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: EdgeInsets.symmetric(vertical: 15),
       child: Text(
         title,
         style: TextStyle(

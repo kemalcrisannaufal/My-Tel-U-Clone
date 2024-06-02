@@ -3,7 +3,15 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class ScheduleView extends GetView {
-  const ScheduleView({Key? key}) : super(key: key);
+  final String name;
+  final String place;
+  final String time;
+  const ScheduleView({
+    required this.name,
+    required this.place,
+    required this.time,
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +19,7 @@ class ScheduleView extends GetView {
       margin: EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.grey[200],
+        color: Colors.blueGrey[100],
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -24,7 +32,7 @@ class ScheduleView extends GetView {
               children: [
                 Expanded(
                   child: Text(
-                    "Aplikasi Berbasis Platform",
+                    name,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 20,
@@ -34,7 +42,7 @@ class ScheduleView extends GetView {
                 ),
                 Icon(
                   Icons.app_registration,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ],
             ),
@@ -50,10 +58,11 @@ class ScheduleView extends GetView {
                     ),
                     SizedBox(width: 5),
                     Text(
-                      "TULT 0607",
+                      place,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
@@ -68,10 +77,11 @@ class ScheduleView extends GetView {
                     ),
                     SizedBox(width: 5),
                     Text(
-                      "10:00 - 12:00",
+                      time,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ],
