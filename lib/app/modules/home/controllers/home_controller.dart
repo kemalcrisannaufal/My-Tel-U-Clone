@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:nice_spot/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
   final List<String> menu = [
@@ -16,5 +17,14 @@ class HomeController extends GetxController {
     FontAwesomeIcons.mapPin, // untuk ikon "Location"
     FontAwesomeIcons.calendarCheck, // untuk ikon "Calendar"
     FontAwesomeIcons.userClock, // untuk ikon "Presensi"
+  ];
+
+  final List<Function()?> menuOnTap = [
+    () {},
+    () {},
+    () => Get.toNamed(Routes.LOCATION),
+    () {},
+    () {},
+    () {}
   ];
 }

@@ -66,7 +66,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               height: 50,
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Cari tempat parkir',
+                  hintText: 'Cari Informasi Terkini',
                   prefixIcon: Icon(Icons.search),
                   border: InputBorder.none,
                 ),
