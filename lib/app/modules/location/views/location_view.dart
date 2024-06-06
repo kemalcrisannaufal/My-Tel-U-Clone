@@ -5,13 +5,24 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:nice_spot/app/routes/app_pages.dart';
 import 'package:nice_spot/app/shared/widgets/appbar.dart';
 import 'package:nice_spot/app/views/views/title_view.dart';
-
+import 'package:place_picker/entities/location_result.dart';
+import 'package:place_picker/widgets/place_picker.dart';
 import '../controllers/location_controller.dart';
 
 class LocationView extends GetView<LocationController> {
   const LocationView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    void showPlacePicker() async {
+      LocationResult result =
+          await Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => PlacePicker(
+                    "AIzaSyBQBQqmy91nqU2uQ0BxKIwa9h_GKXQ9hCg",
+                    displayLocation: LatLng(-6.974028, 107.630531),
+                  )));
+      print(result);
+    }
+
     return Scaffold(
       appBar: CustomAppBar(),
       body: Padding(
@@ -51,6 +62,11 @@ class LocationView extends GetView<LocationController> {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => showPlacePicker(),
+        child: Icon(Icons.place),
+        backgroundColor: Colors.redAccent,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 1,
