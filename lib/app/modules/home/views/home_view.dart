@@ -122,6 +122,8 @@ class HomeView extends GetView<HomeController> {
             Get.toNamed(Routes.HOME);
           } else if (value == 1) {
             Get.toNamed(Routes.LOCATION);
+          } else {
+            Get.toNamed(Routes.PRESENCE);
           }
         },
         items: [

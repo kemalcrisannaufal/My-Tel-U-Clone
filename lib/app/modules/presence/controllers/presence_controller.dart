@@ -1,9 +1,20 @@
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class PresenceController extends GetxController {
-  //TODO: Implement PresenceController
+  var selectedImagePath = ''.obs;
 
-  final count = 0.obs;
+  final ImagePicker picker = ImagePicker();
+
+  void getImage(ImageSource imageSource) async {
+    final XFile? image = await picker.pickImage(source: imageSource);
+    if (image == null) {
+      Get.snackbar("Error", "Tidak ada file yang dipilih");
+    } else {
+      selectedImagePath.value = image.path;
+    }
+  }
+
   @override
   void onInit() {
     super.onInit();
@@ -18,6 +29,4 @@ class PresenceController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
